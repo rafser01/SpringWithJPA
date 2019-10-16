@@ -30,7 +30,7 @@
 
     <context:component-scan base-package="io.bitsofts.springwithhibernate"/>
     <mvc:annotation-driven />
-    
+    <mvc:resources mapping="/styles/**" location="/WEB-INF/styles/" />
     <bean id="viewResolver"
           class="org.springframework.web.servlet.view.InternalResourceViewResolver"
           p:prefix="/WEB-INF/jsp/"

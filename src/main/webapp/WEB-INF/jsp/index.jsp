@@ -8,10 +8,11 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link type="text/css" rel="stylesheet" href="/WEB-INF/styles/bootstrap.css" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-    <body>
-        <h1>Hello World---------!${count}</h1>
+    <body class="container">
+        <h1 >Hello World---------!${count}</h1>
     </body>
 </html>
