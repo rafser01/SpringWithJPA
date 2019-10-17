@@ -74,6 +74,12 @@
                     <artifactId>spring-aspects</artifactId>
                     <version>${spring.framework.version}</version>
                 </dependency>
+        <!-- Tiles template -->
+
+        <!--<dependency>-->
+            <!--<groupId></groupId>-->
+            <!--<artifactId></artifactId>-->
+        <!--</dependency>-->
                 <dependency>
                     <groupId>jstl</groupId>
                     <artifactId>jstl</artifactId>

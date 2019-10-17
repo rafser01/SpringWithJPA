@@ -30,10 +30,30 @@
 
     <context:component-scan base-package="io.bitsofts.springwithhibernate"/>
     <mvc:annotation-driven />
-    <mvc:resources mapping="/styles/**" location="/WEB-INF/styles/" />
+    <mvc:resources mapping="/static/**" location="/static/theme1/"  cache-period="31556926" />
+    <!--<mvc:resources mapping="/, classpath:/META-INF/web-resources/" location="/resources/**" />-->
+    <!--<mvc:default-servlet-handler />-->
+
     <bean id="viewResolver"
           class="org.springframework.web.servlet.view.InternalResourceViewResolver"
           p:prefix="/WEB-INF/jsp/"
           p:suffix=".jsp" />
+    <bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
+        <property name="defaultLocale" value="en" />
+    </bean>
+    <bean id="localeChangeInterceptor" class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+        <property name="paramName" value="lang" />
+    </bean>
+
+    <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
+        <property name="interceptors">
+            <list>
+                <ref bean="localeChangeInterceptor" />
+            </list>
+        </property>
+    </bean>
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename" value="message" />
+    </bean>
     
 </beans>

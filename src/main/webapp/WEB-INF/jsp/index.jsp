@@ -5,14 +5,19 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<spring:url value="static/styles/bootstrap.css" var="bootstrap"/>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <head>
-        <link type="text/css" rel="stylesheet" href="/WEB-INF/styles/bootstrap.css" />
+        <link href="${bootstrap}" rel="stylesheet">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
     <body class="container">
+    <spring:message code="lbl.id"  text="Em" />
         <h1 >Hello World---------!${count}</h1>
+    <button type="button" class="btn btn-primary">Basic</button>
     </body>
 </html>

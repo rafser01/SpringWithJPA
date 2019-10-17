@@ -28,5 +28,12 @@ public class Home {
         m.addAttribute("count", pr.count());
         return "index";
     }
+
+    @RequestMapping("/hk")
+    public String hk(HttpServletRequest request, Model m){
+        System.out.println("Count --------------- "+pr.count());
+        m.addAttribute("count", pr.count());
+        return "index";
+    }
     
 }
