@@ -26,7 +26,7 @@ public class Home {
     public String home(HttpServletRequest request, Model m){
         System.out.println("Count --------------- "+pr.count());
         m.addAttribute("count", pr.count());
-        return "index";
+        return "home";
     }
 
     @RequestMapping("/hk")

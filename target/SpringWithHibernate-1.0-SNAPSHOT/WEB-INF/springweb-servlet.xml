@@ -34,24 +34,39 @@
     <!--<mvc:resources mapping="/, classpath:/META-INF/web-resources/" location="/resources/**" />-->
     <!--<mvc:default-servlet-handler />-->
 
-    <bean id="viewResolver"
+<!--    <bean id="viewResolver"
           class="org.springframework.web.servlet.view.InternalResourceViewResolver"
           p:prefix="/WEB-INF/jsp/"
-          p:suffix=".jsp" />
+          p:suffix=".jsp" />-->
+          <!--<bean id="viewResolver" class="org.springframework.web.servlet.view.tiles3.TilesViewResolver"/>--> 
     <bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
         <property name="defaultLocale" value="en" />
     </bean>
-    <bean id="localeChangeInterceptor" class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
-        <property name="paramName" value="lang" />
+    <mvc:interceptors>
+        <bean id="localeChangeInterceptor" class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+            <property name="paramName" value="lang" />
+        </bean>
+    </mvc:interceptors>
+    
+    <bean id="tilesViewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+        
+        <property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView" />
     </bean>
+    <bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">  
+        <property name="definitions">  
+        <list>  
+            <value>/WEB-INF/layout.xml</value>  
+        </list>  
+        </property>  
+    </bean>  
 
-    <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
+<!--    <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
         <property name="interceptors">
             <list>
                 <ref bean="localeChangeInterceptor" />
             </list>
         </property>
-    </bean>
+    </bean>-->
     <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
         <property name="basename" value="message" />
     </bean>
