@@ -14,17 +14,15 @@
     <head>
         <link href="${bootstrap}" rel="stylesheet">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title><tiles:insertAttribute name="title" /></title>
     </head>
     <body class="container">
     <spring:message code="lbl.id"  text="Em" />
-        <h1 >Hello World---------!${count}</h1>
-    <button type="button" class="btn btn-primary">Basic</button>
-    <tiles:insertAttribute name="header" />
-    <tiles:insertAttribute name="content" />
-    <div style="background-color: red">
-        <tiles:insertAttribute name="body"/>
-    </div>
-    
+    <h4>Success</h4>
+     <tiles:insertAttribute name="body"/>
     </body>
 </html>
+
+ 
+ 
+ 

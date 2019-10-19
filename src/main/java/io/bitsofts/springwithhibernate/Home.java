@@ -26,14 +26,20 @@ public class Home {
     public String home(HttpServletRequest request, Model m){
         System.out.println("Count --------------- "+pr.count());
         m.addAttribute("count", pr.count());
-        return "home";
+        return "homePage";
     }
-
-    @RequestMapping("/hk")
-    public String hk(HttpServletRequest request, Model m){
-        System.out.println("Count --------------- "+pr.count());
-        m.addAttribute("count", pr.count());
-        return "index";
-    }
+//    @RequestMapping("/home2")
+//    public String home2(HttpServletRequest request, Model m){
+//        System.out.println("Count --------------- "+pr.count());
+//        m.addAttribute("count", pr.count());
+//        return "home2";
+//    }
+//
+//    @RequestMapping("/hk")
+//    public String hk(HttpServletRequest request, Model m){
+//        System.out.println("Count --------------- "+pr.count());
+//        m.addAttribute("count", pr.count());
+//        return "index";
+//    }
     
 }
