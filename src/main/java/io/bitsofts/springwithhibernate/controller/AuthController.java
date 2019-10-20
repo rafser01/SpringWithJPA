@@ -24,6 +24,10 @@ public class AuthController {
     @Autowired
     private UserRepository repository;
     
+    @RequestMapping(method = RequestMethod.GET, value = "/")
+    public String login(){
+        return "loginPage";
+    }
     
     @RequestMapping(method = RequestMethod.GET, value = "/login")
     public String loginGet(){
@@ -51,6 +55,26 @@ public class AuthController {
          }
          model.addAttribute("error", "Input fileds");
          return "loginPage";
+     }
+     
+     @RequestMapping(method = RequestMethod.POST, value = "/signupSubmit")
+     public String signupSubmitPost(HttpServletRequest request, Model model) {
+         String name = request.getParameter("name");
+         String password = request.getParameter("password");
+         String email = request.getParameter("email");
+         User u = new User();
+         u.setEmail(email);
+         u.setName(name);
+         u.setPassword(password);
+         try {
+             repository.save(u);
+             return "loginPage";
+         } catch (Exception e) {
+             System.out.println("Error "+e.getMessage());
+             model.addAttribute("error", e.getMessage());
+             return "signupPage";
+         }
+         
      }
     
 }
