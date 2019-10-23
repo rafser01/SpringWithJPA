@@ -22,8 +22,8 @@
     </head>
     <body class="container">
     <%--<spring:message code="lbl.id"  text="Em" />--%>
-    
-     <%--<tiles:insertAttribute name="body"/>--%>
+   
+     <tiles:insertAttribute name="body"/>
      
     </body>
 </html>

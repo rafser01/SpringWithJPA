@@ -1,6 +1,5 @@
 io\bitsofts\springwithhibernate\model\Product.class
 io\bitsofts\springwithhibernate\controller\AuthController.class
-io\bitsofts\springwithhibernate\Home.class
 io\bitsofts\springwithhibernate\model\User.class
 io\bitsofts\springwithhibernate\repository\UserRepository.class
 io\bitsofts\springwithhibernate\repository\ProductRepository.class

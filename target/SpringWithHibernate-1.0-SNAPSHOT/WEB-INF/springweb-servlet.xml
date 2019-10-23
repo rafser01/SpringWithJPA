@@ -39,6 +39,10 @@
           p:prefix="/WEB-INF/jsp/"
           p:suffix=".jsp" />-->
           <!--<bean id="viewResolver" class="org.springframework.web.servlet.view.tiles3.TilesViewResolver"/>--> 
+    <bean class="org.springframework.web.servlet.view.BeanNameViewResolver">
+        <property name="order" value="0" />
+    </bean>
+    
     <bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
         <property name="defaultLocale" value="en" />
     </bean>
