@@ -1,8 +1,10 @@
 io\bitsofts\springwithhibernate\model\Product.class
 io\bitsofts\springwithhibernate\controller\AuthController.class
+io\bitsofts\springwithhibernate\service\ReportHtmlView.class
 io\bitsofts\springwithhibernate\controller\ReportController.class
 io\bitsofts\springwithhibernate\service\ReportService.class
-io\bitsofts\springwithhibernate\service\ReportHtmlView.class
 io\bitsofts\springwithhibernate\model\User.class
 io\bitsofts\springwithhibernate\repository\UserRepository.class
+io\bitsofts\springwithhibernate\model\Item.class
+io\bitsofts\springwithhibernate\controller\DashboardController.class
 io\bitsofts\springwithhibernate\repository\ProductRepository.class

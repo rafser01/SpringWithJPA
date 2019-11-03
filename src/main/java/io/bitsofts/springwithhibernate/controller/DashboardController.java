@@ -60,7 +60,7 @@ public class DashboardController {
     }
     
     @RequestMapping(value = "/addItem/{id}")
-    public String addCartItem(@PathVariable Integer id, HttpSession session){
+    public String addCartItem(@PathVariable Integer id, HttpServletRequest request, HttpSession session){
         Product p = pr.findOne(id);
         Item i = new Item();
         i.setProduct(p);
@@ -74,6 +74,14 @@ public class DashboardController {
             cart.add(i);
             session.setAttribute("cart", cart);
         }
+        
+//        if(request.getRequestURI().indexOf("dashboard") > -1){
+//            System.out.println("Url ------------ "+request.getRequestURI()+"--"+request.getRequestURL());
+//            return "redirect:/dashboard/home";
+//        } else if(request.getRequestURI().indexOf("otherPage") > -1) {
+//            return "redirect:/otherPage/home";
+//        }
+        
         return "redirect:/dashboard/home";
     }
 }
