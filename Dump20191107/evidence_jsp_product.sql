@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.16, for Win64 (x86_64)
 --
--- Host: localhost    Database: evidence_jsp
+-- Host: 127.0.0.1    Database: evidence_jsp
 -- ------------------------------------------------------
 -- Server version	8.0.16
 
@@ -28,7 +28,7 @@ CREATE TABLE `product` (
   `price` double DEFAULT NULL,
   `qty` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +37,7 @@ CREATE TABLE `product` (
 
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` VALUES (5,'Mango',100,1000),(7,'Pine Apple',27,50),(10,'Pine Apple',100,1000),(11,'Pine Apple',100,1000),(12,'Jack Fruit',100,1000);
+INSERT INTO `product` VALUES (5,'Mango',100,1000),(7,'Pine Apple',27,50),(12,'Jack Fruit',100,1000),(15,'Mango',600,100),(16,'Mango',90,1100),(17,'Mango',400,300),(18,'Mango',60,600),(19,'Liche',300,800);
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-10-19 18:19:35
+-- Dump completed on 2019-11-07 18:59:26
