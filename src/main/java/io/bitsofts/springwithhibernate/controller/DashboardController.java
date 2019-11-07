@@ -68,10 +68,28 @@ public class DashboardController {
         if(session.getAttribute("cart") == null){
             List<Item> cart = new ArrayList<>();
             cart.add(i);
+            Double total = i.getProduct().getPrice()*i.getQuantity();
             session.setAttribute("cart", cart);
+            session.setAttribute("total", total);
         } else {
             List<Item> cart = (List<Item>) session.getAttribute("cart");
-            cart.add(i);
+            boolean existing = false;
+            for(int n=0;n<cart.size();n++) {
+                if(cart.get(n).getProduct().getId()== id) {
+                    existing = true;
+                    int previousQty = cart.get(n).getQuantity();
+                    cart.get(n).setQuantity(previousQty+i.getQuantity());
+                }
+            }
+            if(existing == false) {
+                cart.add(i);
+            }
+            
+            Double total = 0.0;
+            for(int n=0;n<cart.size();n++) {
+                total +=cart.get(n).getProduct().getPrice()*cart.get(n).getQuantity();
+            }
+            session.setAttribute("total", total);
             session.setAttribute("cart", cart);
         }
         
@@ -83,5 +101,17 @@ public class DashboardController {
 //        }
         
         return "redirect:/dashboard/home";
+    }
+    @RequestMapping(value = "/confirmPayment")
+    public String confirmPayment(HttpSession session){
+        List<Item> cart = (List<Item>) session.getAttribute("cart");
+        for(int i=0; i<cart.size(); i++) {
+            Item item = cart.get(i);
+            // 1. product table update
+            // 2. Store/save in memo table
+            // 3. Store payment information into payment table
+
+        }
+        return "";
     }
 }
